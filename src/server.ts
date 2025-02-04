@@ -1,9 +1,8 @@
 // src/server.ts
 import express from 'express';
-
+require('@dotenvx/dotenvx').config();
 const app = express();
 const port = process.env.PORT || 3000;
-
 // A simple route
 app.get('/', (req, res) => {
   res.status(200).jsonp({
