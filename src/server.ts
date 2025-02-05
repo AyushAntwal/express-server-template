@@ -1,5 +1,5 @@
-import { NextFunction, Request, Response } from 'express';
-const express = require('express');
+import { Request, Response } from 'express';
+import express from 'express';
 const app = express();
 
 app.get('/', (req: Request, res: Response) => {
