@@ -1,17 +1,11 @@
-// src/server.ts
-import express from 'express';
-require('@dotenvx/dotenvx').config();
+import { NextFunction, Request, Response } from 'express';
+const express = require('express');
 const app = express();
-const port = process.env.PORT || 3000;
-// A simple route
-app.get('/', (req, res) => {
-  res.status(200).jsonp({
-    message: 'Working great!!!',
-    new: 'some thing is add new lets test this',
-  });
+
+app.get('/', (req: Request, res: Response) => {
+  res.status(200).json({ message: 'Server is working!!' });
 });
 
-// Start the server
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
 });
